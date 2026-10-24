@@ -1,33 +1,27 @@
-plugins {
-	id 'java'
+// CoxScouter Plugin Module - External CoX Scouter integration
+// Original plugin by Blackberry0Pie: https://github.com/Blackberry0Pie/CoX-Scouter-External
+// Integrated as submodule with build system adaptation
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/java'
+        }
+        resources {
+            srcDir 'src/main/resources'
+        }
+    }
 }
 
-repositories {
-	mavenLocal()
-	maven {
-		url = 'https://repo.runelite.net'
-	}
-	mavenCentral()
+// Plugin-specific JAR configuration
+jar {
+    archiveBaseName.set('Swaid-CoxScouter')
 }
 
-def runeLiteVersion = 'latest.release'
-
+// Plugin-specific core module dependencies
 dependencies {
-	compileOnly group: 'net.runelite', name:'client', version: runeLiteVersion
-
-	compileOnly 'org.projectlombok:lombok:1.18.20'
-	annotationProcessor 'org.projectlombok:lombok:1.18.20'
-
-	testImplementation 'junit:junit:4.12'
-	testImplementation group: 'net.runelite', name:'client', version: runeLiteVersion
-	testImplementation group: 'net.runelite', name:'jshell', version: runeLiteVersion
-}
-
-group = 'bbp.chambers'
-version = '1.2.8'
-sourceCompatibility = '1.8'
-
-tasks.withType(JavaCompile) {
-	options.encoding = 'UTF-8'
-	options.release.set(11)
+    // CoxScouter can leverage these core modules for enhanced functionality:
+    implementation project(':swaid:core-modules:core-a1central')     // For shared PvM utilities
+    implementation project(':swaid:core-modules:core-kotoriutils')   // For prayer and utility functions
+    implementation project(':swaid:core-modules:core-swaidutils')    // For performance optimizations
 }

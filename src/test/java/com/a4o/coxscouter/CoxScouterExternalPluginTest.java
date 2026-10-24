@@ -1,4 +1,4 @@
-package bbp.chambers;
+package com.a4o.coxscouter;
 
 import net.runelite.client.RuneLite;
 import net.runelite.client.externalplugins.ExternalPluginManager;

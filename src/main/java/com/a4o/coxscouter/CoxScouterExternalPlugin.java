@@ -23,7 +23,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package bbp.chambers;
+package com.a4o.coxscouter;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.google.inject.Provides;
@@ -87,8 +87,9 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @PluginDescriptor(
-	name = "CoX Scouter External",
-	tags = {"combat", "overlay", "pve", "pvm", "bosses", "chambers", "xeric", "raids"}
+	name = "<html><font color=\"#FF0000\">[Raid]</font> <font color=\"#D3D8D9\">CoX Scouter</font></html>",
+	description = "External CoX Scouter plugin, shows rooms and removes panel once at Olm",
+	tags = {"combat", "overlay", "pve", "pvm", "bosses", "chambers", "xeric", "raids", "swaid"}
 )
 public class CoxScouterExternalPlugin extends Plugin
 {
@@ -552,7 +553,7 @@ public class CoxScouterExternalPlugin extends Plugin
 			{
 				itemIds.addAll(recommended);
 			}
-		}
+}
 
 		return itemIds;
 	}
