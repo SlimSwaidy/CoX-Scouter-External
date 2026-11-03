@@ -21,7 +21,6 @@ jar {
 // Plugin-specific core module dependencies
 dependencies {
     // CoxScouter can leverage these core modules for enhanced functionality:
-    implementation project(':swaid:core-modules:core-a1central')     // For shared PvM utilities
     implementation project(':swaid:core-modules:core-kotoriutils')   // For prayer and utility functions
     implementation project(':swaid:core-modules:core-swaidutils')    // For performance optimizations
 }
